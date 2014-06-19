@@ -47,4 +47,13 @@ when 'debian'
 when 'omnios'
   default['splunk']['forwarder']['url'] = 'http://download.splunk.com/releases/6.1.1/universalforwarder/solaris/splunkforwarder-6.1.1-207789-SunOS-x86_64.tar.Z'
   default['splunk']['server']['url'] = 'http://download.splunk.com/releases/6.1.1/splunk/solaris/splunk-6.1.1-207789-solaris-10-intel.pkg.Z'
+else
+  if node['kernel']['machine'] == 'x86_64'
+    default['splunk']['forwarder']['url'] = 'http://download.splunk.com/releases/6.1.1/universalforwarder/linux/splunkforwarder-6.1.1-207789-linux-2.6-amd64.deb'
+    default['splunk']['server']['url'] = 'http://download.splunk.com/releases/6.1.1/splunk/linux/splunk-6.1.1-207789-linux-2.6-amd64.deb'
+  else
+    default['splunk']['forwarder']['url'] = 'http://download.splunk.com/releases/6.1.1/universalforwarder/linux/splunkforwarder-6.1.1-207789-linux-2.6-intel.deb'
+    default['splunk']['server']['url'] = 'http://download.splunk.com/releases/6.1.1/splunk/linux/splunk-6.1.1-207789-linux-2.6-intel.deb'
+  end
+	
 end
