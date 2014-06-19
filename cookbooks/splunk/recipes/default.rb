@@ -15,10 +15,10 @@ log "  Installing Chef Vault gem"
 # 	action :install
 # end
 
-chef_gem "chef_vault" do
-  action :install
-end
-include_recipe 'chef-vault'
+# chef_gem "chef_vault" do
+#   action :install
+# end
+# include_recipe 'chef-vault'
 
 if node['splunk']['disabled']
   include_recipe 'chef-splunk::disabled'
