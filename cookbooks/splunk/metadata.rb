@@ -9,6 +9,8 @@ version          '0.1.1'
 depends "rightscale"
 
 recipe "splunk::default","Setup Splunk Server/Forwarder."
+recipe "splunk::client","Setup Splunk Server/Forwarder."
+recipe "splunk::setup_auth","Setup Splunk Authentication."
 
 # Required #
 attribute "splunk/servers",
@@ -21,4 +23,4 @@ attribute "splunk/splunk_auth_info",
    :display_name => "Splunk Authentication Info",
    :description => "Specify Splunk Auth Info to Send Data.",
    :required => "required",
-   :recipes => ["splunk::setup_auth"]   
+   :recipes => ["splunk::default"]   
